@@ -5,5 +5,4 @@ class SymComManager(var communicationEventListener: CommunicationEventListener? 
     fun sendRequest(url: String, request: String) {
 		//TODO to implement
     }
-
 }
