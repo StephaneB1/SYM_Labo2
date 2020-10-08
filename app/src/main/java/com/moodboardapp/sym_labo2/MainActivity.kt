@@ -45,7 +45,11 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, Activity5::class.java)
             startActivity(intent)
         }
+    }
 
 
+    companion object {
+        private const val TAG: String = "MainActivity"
+        const val LAB_SERVER: String = "http://sym.iict.ch/"
     }
 }
