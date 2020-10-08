@@ -15,29 +15,29 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:text="ACTIVITY 1"/>
+        android:text="@string/activity_1"/>
     <Button
         android:id="@+id/activity2"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:text="ACTIVITY 2"/>
+        android:text="@string/activity_2"/>
     <Button
         android:id="@+id/activity3"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:text="ACTIVITY 3"/>
+        android:text="@string/activity_3"/>
     <Button
         android:id="@+id/activity4"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:text="ACTIVITY 4"/>
+        android:text="@string/activity_4"/>
     <Button
         android:id="@+id/activity5"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:text="ACTIVITY 5"/>
+        android:text="@string/activity_5"/>
 </LinearLayout>

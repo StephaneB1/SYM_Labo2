@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">SYM_Labo2</string>
+    <string name="activity_1">ACTIVITY 1</string>
+    <string name="activity_2">ACTIVITY 2</string>
+    <string name="activity_3">ACTIVITY 3</string>
+    <string name="activity_4">ACTIVITY 4</string>
+    <string name="activity_5">ACTIVITY 5</string>
 </resources>
