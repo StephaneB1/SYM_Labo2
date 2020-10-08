@@ -5,4 +5,9 @@
     <string name="activity_3">ACTIVITY 3</string>
     <string name="activity_4">ACTIVITY 4</string>
     <string name="activity_5">ACTIVITY 5</string>
+    <string name="activity_1_title">ASYNCRONE</string>
+    <string name="activity_2_title">DIFEREE</string>
+    <string name="activity_3_title">JSON-XML</string>
+    <string name="activity_4_title">COMPRESEE</string>
+    <string name="activity_5_title">GRAPHQL</string>
 </resources>
