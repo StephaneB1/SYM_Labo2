@@ -19,6 +19,7 @@
         android:fontFamily="monospace"/>
 
     <TextView
+        android:id="@+id/type"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/title"
@@ -26,4 +27,46 @@
         android:textStyle="bold"
         android:textSize="20sp"
         android:fontFamily="monospace"/>
+
+    <TextView
+        android:id="@+id/sent_txt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/type"
+        android:text="@string/sent"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:fontFamily="monospace"/>
+
+    <TextView
+        android:id="@+id/sent_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/sent_txt"
+        android:text="@string/sent"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:fontFamily="monospace"
+        android:background="@drawable/sent_content_background"/>
+
+    <TextView
+        android:id="@+id/received_txt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/sent_content"
+        android:text="@string/received"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:fontFamily="monospace"/>
+
+    <TextView
+        android:id="@+id/received_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/received_txt"
+        android:text="@string/sent"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:fontFamily="monospace"
+        android:background="@drawable/received_content_background"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

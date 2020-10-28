@@ -10,4 +10,7 @@
     <string name="activity_3_title">JSON-XML</string>
     <string name="activity_4_title">COMPRESEE</string>
     <string name="activity_5_title">GRAPHQL</string>
+    <string name="url">http://sym.iict.ch/</string>
+    <string name="sent">sent</string>
+    <string name="received">received</string>
 </resources>
