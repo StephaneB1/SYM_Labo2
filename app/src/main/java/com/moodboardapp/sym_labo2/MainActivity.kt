@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import kotlin.concurrent.thread
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,8 +27,10 @@ class MainActivity : AppCompatActivity() {
         activity5Launcher = findViewById(R.id.activity5)
 
         activity1Launcher.setOnClickListener {
-            val intent = Intent(this, Activity1::class.java)
-            startActivity(intent)
+            thread {
+                val intent = Intent(this, Activity1::class.java)
+                startActivity(intent)
+            }
         }
         activity2Launcher.setOnClickListener {
             val intent = Intent(this, Activity2::class.java)
