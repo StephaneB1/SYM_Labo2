@@ -21,13 +21,13 @@ class Activity1 : AppCompatActivity() {
 
         val mcm = SymComManager(object : CommunicationEventListener {
             override fun handleServerResponse(response: String) {
-                receivedTextView.text = "Received from server : $response"
+                receivedTextView.text = "Received : $response"
             }
         })
 
         val text = "well well well"
         mcm.sendRequest(MainActivity.LAB_SERVER + "rest/txt", text)
-        sendingText.text = "Sending to server : $text"
+        sendingText.text = "Sending : $text"
     }
 
     companion object {

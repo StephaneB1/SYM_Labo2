@@ -40,7 +40,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/colorPrimary"
-            android:text="Sending to server : "
             android:textStyle="bold"
             android:textSize="18sp"
             android:fontFamily="monospace"/>
@@ -50,7 +49,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/colorPrimary"
-            android:text="Received from server :"
             android:textStyle="bold"
             android:textSize="18sp"
             android:fontFamily="monospace"/>
