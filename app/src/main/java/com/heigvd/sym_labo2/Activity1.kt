@@ -1,10 +1,8 @@
-package com.moodboardapp.sym_labo2
+package com.heigvd.sym_labo2
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import ch.heigvd.iict.sym.lab.comm.CommunicationEventListener
-import ch.heigvd.iict.sym.lab.comm.SymComManager
 
 class Activity1 : AppCompatActivity() {
 

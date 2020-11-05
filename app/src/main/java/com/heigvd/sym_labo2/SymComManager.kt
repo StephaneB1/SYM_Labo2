@@ -1,9 +1,7 @@
-package ch.heigvd.iict.sym.lab.comm
+package com.heigvd.sym_labo2
 
 import android.os.Handler
 import android.os.Looper
-import android.util.Log
-import java.io.OutputStreamWriter
 import java.net.HttpURLConnection
 import java.net.URL
 

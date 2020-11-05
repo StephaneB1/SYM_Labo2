@@ -1,4 +1,4 @@
-package com.moodboardapp.sym_labo2
+package com.heigvd.sym_labo2
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
