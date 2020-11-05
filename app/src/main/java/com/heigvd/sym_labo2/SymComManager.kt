@@ -10,14 +10,18 @@ class SymComManager(var communicationEventListener: CommunicationEventListener? 
 
 
     fun sendRequest(url: String, request: String) {
+        // Start http thread (so it's not on the main)
         var httpHandler = HandlerThread("httpThread")
         httpHandler.start()
+        // Start handler for the http request
         Handler(httpHandler.looper).postDelayed( {
-            val mURL = URL("$url?text=$request")
+            val mURL = URL(url)
 
             with(mURL.openConnection() as HttpURLConnection) {
                 setRequestProperty("Content-Type", "txt/plain")
-                requestMethod = "POST"
+                doOutput = true // indicates POST method
+                //doInput= true
+                outputStream.write(request.toByteArray())
                 communicationEventListener?.handleServerResponse(responseMessage)
             }
         }, 0)
