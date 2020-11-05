@@ -1,18 +1,17 @@
 package com.heigvd.sym_labo2
 
 import android.content.Context
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.HandlerThread
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.work.*
 import java.net.HttpURLConnection
 import java.net.URL
+import java.util.concurrent.TimeUnit
 
 class Activity2 : AppCompatActivity() {
 
@@ -36,17 +35,22 @@ class Activity2 : AppCompatActivity() {
             // Start handler for the http request
             Handler(httpHandler.looper).postDelayed({
 
-                // Http worker
-                val compressionWork = OneTimeWorkRequest.Builder(HttpWorker::class.java)
+                // Http worker builder with Backoff criteria (retry policy)
+                val compressionWorkBuilder = OneTimeWorkRequestBuilder<HttpWorker>()
+                    .setBackoffCriteria(
+                        BackoffPolicy.LINEAR,
+                        OneTimeWorkRequest.MIN_BACKOFF_MILLIS,
+                        TimeUnit.MILLISECONDS)
 
                 // Set the worker's parameters
                 val data = Data.Builder()
-                data.putString("target_url", MainActivity.LAB_SERVER + "rest/txt")
+                val url =  MainActivity.LAB_SERVER + "rest/txt"
+                data.putString("target_url", url)
                 data.putString("target_request", "help")
-                compressionWork.setInputData(data.build())
+                compressionWorkBuilder.setInputData(data.build())
 
                 // Enqueue worker
-                WorkManager.getInstance().enqueue(compressionWork.build())
+                WorkManager.getInstance(this).enqueue(compressionWorkBuilder.build())
             }, 0)
         }
 
@@ -58,18 +62,22 @@ class Activity2 : AppCompatActivity() {
             val mURL = URL(inputData.getString("target_url"))
             val request = inputData.getString("target_request")
 
-            with(mURL.openConnection() as HttpURLConnection) {
-                setRequestProperty("Content-Type", "txt/plain")
-                doOutput = true // indicates POST method
+            try {
+                with(mURL.openConnection() as HttpURLConnection) {
+                    setRequestProperty("Content-Type", "txt/plain")
+                    doOutput = true // indicates POST method
 
-                outputStream.write(request?.toByteArray())
-                if (responseCode != 200) {
-                    Log.d(TAG, "doWork: error, retrying...")
-                    return Result.retry()
-                } else {
-                    return Result.success()
+                    outputStream.write(request?.toByteArray())
+                    if (responseCode != 200) {
+                        return Result.retry()
+                    } else {
+                        return Result.success()
+                    }
                 }
+            } catch (e: Exception) {
+                return Result.failure()
             }
+
         }
     }
 
