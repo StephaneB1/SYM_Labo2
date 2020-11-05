@@ -1,23 +1,23 @@
 package com.heigvd.sym_labo2
 
 import android.os.Handler
+import android.os.HandlerThread
 import android.os.Looper
 import java.net.HttpURLConnection
 import java.net.URL
 
 class SymComManager(var communicationEventListener: CommunicationEventListener? = null) {
 
+
     fun sendRequest(url: String, request: String) {
-        Handler(Looper.getMainLooper()).postDelayed( {
-            val mURL = URL(url)
+        var httpHandler = HandlerThread("httpThread")
+        httpHandler.start()
+        Handler(httpHandler.looper).postDelayed( {
+            val mURL = URL("$url?text=$request")
 
             with(mURL.openConnection() as HttpURLConnection) {
-                requestMethod = "GET"
-
-                //val wr = OutputStreamWriter(getOutputStream());
-                //wr.write(request);
-                //wr.flush();
-
+                setRequestProperty("Content-Type", "txt/plain")
+                requestMethod = "POST"
                 communicationEventListener?.handleServerResponse(responseMessage)
             }
         }, 0)

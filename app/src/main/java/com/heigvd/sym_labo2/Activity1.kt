@@ -10,12 +10,12 @@ class Activity1 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_1)
 
-        var mcm = SymComManager(object : CommunicationEventListener {
+        val mcm = SymComManager(object : CommunicationEventListener {
             override fun handleServerResponse(response: String) {
                 Log.d(TAG, "handleServerResponse: " + response)
             }
         })
-        mcm.sendRequest(MainActivity.LAB_SERVER, "txt")
+        mcm.sendRequest(MainActivity.LAB_SERVER + "rest/txt", "well well well")
     }
 
     companion object {
