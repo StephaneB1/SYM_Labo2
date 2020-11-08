@@ -1,4 +1,4 @@
-package com.moodboardapp.sym_labo2
+package ch.heigvd.sym_labo_2
 
 import org.junit.Test
 
