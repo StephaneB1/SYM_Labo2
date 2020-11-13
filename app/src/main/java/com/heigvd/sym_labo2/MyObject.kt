@@ -9,5 +9,4 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class MyObject(val dataString: String, val dataInt : Int) {
-
 }

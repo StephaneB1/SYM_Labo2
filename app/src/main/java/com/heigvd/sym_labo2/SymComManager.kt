@@ -2,13 +2,12 @@ package com.heigvd.sym_labo2
 
 import android.os.Handler
 import android.os.HandlerThread
-import android.os.Looper
 import android.util.Log
 import java.io.BufferedReader
 import java.io.InputStreamReader
 import java.net.HttpURLConnection
 import java.net.URL
-import kotlin.math.log
+import java.util.stream.Collectors
 
 class SymComManager(var communicationEventListener: CommunicationEventListener? = null) {
 
@@ -36,14 +35,11 @@ class SymComManager(var communicationEventListener: CommunicationEventListener? 
                     br = BufferedReader(InputStreamReader(errorStream));
                 }
 
-                var result = "["+responseCode + "]\n"
-                while (br.readLine() != null) {
-                    result += br.readLine() + "\n"
-                }
+                val responseBody = br.lines().collect(Collectors.joining())
 
-                Log.d(TAG, "sendRequest: Received : " + result)
+                Log.d(TAG, "sendRequest: Received : " + responseBody)
 
-                communicationEventListener?.handleServerResponse(result)
+                communicationEventListener?.handleServerResponse(responseBody)
             }
         }, 0)
     }
