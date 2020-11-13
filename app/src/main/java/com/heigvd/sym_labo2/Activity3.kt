@@ -35,7 +35,7 @@ class Activity3 : AppCompatActivity() {
         val mcm = SymComManager(object : CommunicationEventListener {
             override fun handleServerResponse(response: String) {
                 runOnUiThread {
-                    receivedTextView.text = "Received :\n $response"
+                    receivedTextView.text = "Received : $response"
                 }
             }
         })

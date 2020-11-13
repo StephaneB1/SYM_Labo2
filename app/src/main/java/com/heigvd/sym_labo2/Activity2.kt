@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.HandlerThread
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -16,7 +17,6 @@ import java.util.concurrent.TimeUnit
 class Activity2 : AppCompatActivity() {
 
     private lateinit var inputToSend: EditText
-    private lateinit var receivedTextView: TextView
     private lateinit var sendButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,7 +46,7 @@ class Activity2 : AppCompatActivity() {
                 val data = Data.Builder()
                 val url =  MainActivity.LAB_SERVER + "rest/txt"
                 data.putString("target_url", url)
-                data.putString("target_request", "help")
+                data.putString("target_request", inputToSend.text.toString())
                 compressionWorkBuilder.setInputData(data.build())
 
                 // Enqueue worker
@@ -69,13 +69,15 @@ class Activity2 : AppCompatActivity() {
 
                     outputStream.write(request?.toByteArray())
                     return if (responseCode != 200) {
+                        receivedTextView.text = "Sorry couldn't reach the server, trying again in a bit..."
                         Result.retry()
                     } else {
+                        receivedTextView.text = "Alright all good!"
                         Result.success()
                     }
                 }
             } catch (e: Exception) {
-                return Result.failure()
+                return Result.retry()
             }
 
         }
@@ -83,5 +85,6 @@ class Activity2 : AppCompatActivity() {
 
     companion object {
         private const val TAG: String = "Activity2"
+        private lateinit var receivedTextView: TextView
     }
 }

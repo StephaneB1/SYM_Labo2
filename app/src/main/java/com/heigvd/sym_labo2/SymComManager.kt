@@ -8,6 +8,7 @@ import java.io.BufferedReader
 import java.io.InputStreamReader
 import java.net.HttpURLConnection
 import java.net.URL
+import kotlin.math.log
 
 class SymComManager(var communicationEventListener: CommunicationEventListener? = null) {
 
@@ -35,7 +36,7 @@ class SymComManager(var communicationEventListener: CommunicationEventListener? 
                     br = BufferedReader(InputStreamReader(errorStream));
                 }
 
-                var result = ""
+                var result = "["+responseCode + "]\n"
                 while (br.readLine() != null) {
                     result += br.readLine() + "\n"
                 }
