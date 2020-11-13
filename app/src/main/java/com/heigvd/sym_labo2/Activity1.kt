@@ -1,10 +1,8 @@
 package com.heigvd.sym_labo2
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.widget.Button
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 
 class Activity1 : AppCompatActivity() {
 
@@ -21,12 +19,14 @@ class Activity1 : AppCompatActivity() {
 
         val mcm = SymComManager(object : CommunicationEventListener {
             override fun handleServerResponse(response: String) {
-                receivedTextView.text = "Received : $response"
+                runOnUiThread {
+                    receivedTextView.text = "Received : $response"
+                }
             }
         })
 
         val text = "well well well"
-        mcm.sendRequest(MainActivity.LAB_SERVER + "rest/txt", text)
+        mcm.sendRequest(MainActivity.LAB_SERVER + "rest/txt", text, "txt/plain")
         sendingText.text = "Sending : $text"
     }
 

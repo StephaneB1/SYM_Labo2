@@ -19,6 +19,7 @@
         android:fontFamily="monospace"/>
 
     <TextView
+        android:id="@+id/subtitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/title"
@@ -26,5 +27,82 @@
         android:textStyle="bold"
         android:textSize="20sp"
         android:fontFamily="monospace"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/subtitle"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="italic"
+            android:text="Send string and integer data by JSON or XML !"
+            android:textSize="16sp"
+            android:textAlignment="center"
+            android:fontFamily="monospace"
+            android:layout_marginBottom="10dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="5">
+            <EditText
+                android:id="@+id/input_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:inputType="text"
+                android:hint="String"/>
+            <EditText
+                android:id="@+id/input_int"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:inputType="number"
+                android:hint="Integer"/>
+        </LinearLayout>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_margin="10dp">
+            <RadioButton android:id="@+id/send_by_json"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="JSON"/>
+            <RadioButton android:id="@+id/send_by_xml"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="XML"/>
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/send_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Send"/>
+
+        <TextView
+            android:id="@+id/received_txt"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/white"
+            android:background="@color/grey"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:fontFamily="monospace"
+            android:text="Received:"
+            android:padding="10dp"
+            android:layout_marginTop="10dp"/>
+
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

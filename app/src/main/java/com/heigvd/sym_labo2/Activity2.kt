@@ -30,7 +30,7 @@ class Activity2 : AppCompatActivity() {
         sendButton.setOnClickListener {
             // Send the request via WorkManager (if offline it will retry)
 
-            var httpHandler = HandlerThread("httpThread")
+            val httpHandler = HandlerThread("httpThread2")
             httpHandler.start()
             // Start handler for the http request
             Handler(httpHandler.looper).postDelayed({
@@ -68,10 +68,10 @@ class Activity2 : AppCompatActivity() {
                     doOutput = true // indicates POST method
 
                     outputStream.write(request?.toByteArray())
-                    if (responseCode != 200) {
-                        return Result.retry()
+                    return if (responseCode != 200) {
+                        Result.retry()
                     } else {
-                        return Result.success()
+                        Result.success()
                     }
                 }
             } catch (e: Exception) {
