@@ -1,7 +1,6 @@
 package com.heigvd.sym_labo2
 
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.RadioButton
@@ -184,7 +183,6 @@ class Activity3 : AppCompatActivity() {
                         }
                     }
 
-                    Log.d(TAG, "deserializeToMyObjectFromXML: Adding " + name + ", " + firstname)
                     directory.add(Person(name, firstname, middlename, gender, numbers))
                 }
             }
