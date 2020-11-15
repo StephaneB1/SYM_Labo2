@@ -3,6 +3,8 @@ package com.heigvd.sym_labo2
 import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.heigvd.sym_labo2.comm.CommunicationEventListener
+import com.heigvd.sym_labo2.comm.SymComManager
 
 class Activity1 : AppCompatActivity() {
 

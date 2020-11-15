@@ -6,6 +6,8 @@ import android.widget.EditText
 import android.widget.RadioButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.heigvd.sym_labo2.comm.CommunicationEventListener
+import com.heigvd.sym_labo2.comm.SymComManager
 import com.heigvd.sym_labo2.models.*
 import kotlinx.serialization.json.Json
 import org.w3c.dom.Document

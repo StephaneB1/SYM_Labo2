@@ -6,6 +6,9 @@ import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.ListView
 import android.widget.ProgressBar
+import com.heigvd.sym_labo2.comm.CommunicationEventListener
+import com.heigvd.sym_labo2.comm.SymComManager
+import com.heigvd.sym_labo2.models.Author
 import com.heigvd.sym_labo2.models.Post
 import kotlinx.serialization.builtins.ListSerializer
 import kotlinx.serialization.json.Json

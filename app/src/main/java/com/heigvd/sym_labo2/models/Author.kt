@@ -1,4 +1,4 @@
-package com.heigvd.sym_labo2
+package com.heigvd.sym_labo2.models
 
 import com.heigvd.sym_labo2.models.Post
 import kotlinx.serialization.Serializable

@@ -1,4 +1,4 @@
-package com.heigvd.sym_labo2
+package com.heigvd.sym_labo2.comm
 
 import android.os.Handler
 import android.os.HandlerThread
