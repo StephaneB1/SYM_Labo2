@@ -19,6 +19,7 @@
         android:fontFamily="monospace"/>
 
     <TextView
+        android:id="@+id/subtitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/title"
@@ -26,5 +27,63 @@
         android:textStyle="bold"
         android:textSize="20sp"
         android:fontFamily="monospace"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/subtitle"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/sending_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:fontFamily="monospace"/>
+
+        <TextView
+            android:id="@+id/received_time_4g"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:text="Time with 4G : "
+            android:fontFamily="monospace"/>
+
+        <TextView
+            android:id="@+id/received_time_2g"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:text="Time with 2G : "
+            android:fontFamily="monospace"/>
+
+
+        <TextView
+            android:id="@+id/received_time_comp_4g"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:text="Time with 4G (compressed) : "
+            android:fontFamily="monospace"/>
+
+        <TextView
+            android:id="@+id/received_time_comp_2g"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:text="Time with 2G (compressed) : "
+            android:fontFamily="monospace"/>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
