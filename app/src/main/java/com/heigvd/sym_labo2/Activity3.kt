@@ -6,6 +6,7 @@ import android.widget.EditText
 import android.widget.RadioButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.heigvd.sym_labo2.models.*
 import kotlinx.serialization.json.Json
 import org.w3c.dom.Document
 import org.xml.sax.InputSource
@@ -82,21 +83,27 @@ class Activity3 : AppCompatActivity() {
 
                 val directory = ArrayList<Person>()
 
-                directory.add(Person("Doe", "John","", GENDER.MAN,
+                directory.add(
+                    Person("Doe", "John","", GENDER.MAN,
                     ArrayList(listOf(
                     PhoneNumber(NUMBER_TYPE.HOME, "0219329021"),
                     PhoneNumber(NUMBER_TYPE.MOBILE, "0798576472")
-                ))))
-                directory.add(Person("Hemming", "Sarah","Jessica", GENDER.WOMAN,
+                )))
+                )
+                directory.add(
+                    Person("Hemming", "Sarah","Jessica", GENDER.WOMAN,
                     ArrayList(listOf(
                     PhoneNumber(NUMBER_TYPE.HOME, "0219483040"),
                     PhoneNumber(NUMBER_TYPE.WORK, "0885904300")
-                ))))
-                directory.add(Person("testUser", inputTextToSend.text.toString(),"", GENDER.OTHER,
+                )))
+                )
+                directory.add(
+                    Person("testUser", inputTextToSend.text.toString(),"", GENDER.OTHER,
                     ArrayList(listOf(
                     PhoneNumber(NUMBER_TYPE.HOME, inputIntToSend.text.toString())
                 )
-                    )))
+                    ))
+                )
 
                 isXml = true
                 canSendAgain = false

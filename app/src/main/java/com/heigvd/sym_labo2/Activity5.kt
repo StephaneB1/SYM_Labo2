@@ -2,12 +2,11 @@ package com.heigvd.sym_labo2
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.ListView
 import android.widget.ProgressBar
-import androidx.appcompat.app.AlertDialog
+import com.heigvd.sym_labo2.models.Post
 import kotlinx.serialization.builtins.ListSerializer
 import kotlinx.serialization.json.Json
 import java.util.*

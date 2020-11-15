@@ -1,8 +1,7 @@
 package com.heigvd.sym_labo2
 
+import com.heigvd.sym_labo2.models.Post
 import kotlinx.serialization.Serializable
-import java.time.LocalDate
-import java.util.*
 import kotlin.collections.ArrayList
 
 /**

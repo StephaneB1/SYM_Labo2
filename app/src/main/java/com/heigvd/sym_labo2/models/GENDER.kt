@@ -1,4 +1,4 @@
-package com.heigvd.sym_labo2
+package com.heigvd.sym_labo2.models
 
 import kotlinx.serialization.Serializable
 
@@ -8,6 +8,8 @@ import kotlinx.serialization.Serializable
  * Date    : 13.11.2020
  */
 @Serializable
-data class PhoneNumber(val type: NUMBER_TYPE,
-                       val number: String) {
+enum class GENDER {
+    MAN,
+    WOMAN,
+    OTHER
 }

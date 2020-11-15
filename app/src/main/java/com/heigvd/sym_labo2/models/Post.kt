@@ -1,4 +1,4 @@
-package com.heigvd.sym_labo2
+package com.heigvd.sym_labo2.models
 
 import kotlinx.serialization.Serializable
 import java.time.LocalDate
