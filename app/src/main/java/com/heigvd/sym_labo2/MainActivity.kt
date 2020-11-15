@@ -4,7 +4,11 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-
+/**
+ * Project : SYM_Labo2
+ * Author  : Stéphane Bottin, Simon Mattei, Bastien Potet
+ * Date    : 13.11.2020
+ */
 class MainActivity : AppCompatActivity() {
 
     private lateinit var activity1Launcher: Button

@@ -18,7 +18,11 @@ import javax.xml.parsers.DocumentBuilder
 import javax.xml.parsers.DocumentBuilderFactory
 import kotlin.collections.ArrayList
 
-
+/**
+ * Project : SYM_Labo2
+ * Author  : Stéphane Bottin, Simon Mattei, Bastien Potet
+ * Date    : 13.11.2020
+ */
 class Activity3 : AppCompatActivity() {
 
     private lateinit var inputTextToSend: EditText

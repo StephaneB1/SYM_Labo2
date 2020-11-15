@@ -4,7 +4,7 @@ import kotlinx.serialization.Serializable
 
 /**
  * Project : SYM_Labo2
- * Author  : Stéphane Bottin
+ * Author  : Stéphane Bottin, Simon Mattei, Bastien Potet
  * Date    : 13.11.2020
  */
 @Serializable

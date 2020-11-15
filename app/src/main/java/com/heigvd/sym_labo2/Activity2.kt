@@ -13,7 +13,11 @@ import androidx.work.*
 import java.net.HttpURLConnection
 import java.net.URL
 import java.util.concurrent.TimeUnit
-
+/**
+ * Project : SYM_Labo2
+ * Author  : Stéphane Bottin, Simon Mattei, Bastien Potet
+ * Date    : 13.11.2020
+ */
 class Activity2 : AppCompatActivity() {
 
     private lateinit var inputToSend: EditText

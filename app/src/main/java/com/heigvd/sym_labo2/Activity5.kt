@@ -14,7 +14,11 @@ import kotlinx.serialization.builtins.ListSerializer
 import kotlinx.serialization.json.Json
 import java.util.*
 import kotlin.collections.ArrayList
-
+/**
+ * Project : SYM_Labo2
+ * Author  : Stéphane Bottin, Simon Mattei, Bastien Potet
+ * Date    : 13.11.2020
+ */
 class Activity5 : AppCompatActivity() {
 
     private lateinit var listView : ListView

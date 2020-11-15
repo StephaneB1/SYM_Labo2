@@ -9,7 +9,11 @@ import java.net.HttpURLConnection
 import java.net.URL
 import java.util.stream.Collectors
 import java.util.zip.Deflater
-
+/**
+ * Project : SYM_Labo2
+ * Author  : Stéphane Bottin, Simon Mattei, Bastien Potet
+ * Date    : 13.11.2020
+ */
 class SymComManager(var communicationEventListener: CommunicationEventListener? = null) {
 
 

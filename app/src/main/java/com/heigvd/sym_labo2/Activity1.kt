@@ -5,7 +5,11 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.heigvd.sym_labo2.comm.CommunicationEventListener
 import com.heigvd.sym_labo2.comm.SymComManager
-
+/**
+ * Project : SYM_Labo2
+ * Author  : Stéphane Bottin, Simon Mattei, Bastien Potet
+ * Date    : 13.11.2020
+ */
 class Activity1 : AppCompatActivity() {
 
 
